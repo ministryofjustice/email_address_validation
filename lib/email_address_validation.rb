@@ -1,15 +1,32 @@
+require_relative 'email_address_validation/configuration'
 require_relative 'mx_checker'
 require 'mail'
 
-module EmailAddressValidation
-  class Checker
+module EmailAddressValidation # :nodoc:
+  class << self
+    attr_writer :configuration
+  end
+
+  def self.configuration
+    @configuration ||= Configuration.new
+  end
+
+  def self.reset
+    @configuration = Configuration.new
+  end
+
+  def self.configure
+    yield(configuration)
+  end
+
+  class Checker # :nodoc:
     def initialize(original_address)
       @original_address = original_address
       @parsed = parse_address(original_address)
     end
 
     def error
-      @error ||= compute_error.to_s.inquiry
+      @error ||= compute_error.to_s
     end
 
     def message
@@ -17,7 +34,7 @@ module EmailAddressValidation
     end
 
     def valid?
-      error.valid?
+      error.include?('valid')
     end
 
     private
@@ -59,7 +76,7 @@ module EmailAddressValidation
 
     def mx_records?
       ActiveSupport::Notifications.instrument(:mx, category: :mx) do
-        MxChecker.new.records?(domain)
+        EmailAddressValidation.configuration.mx_checker.records?(domain)
       end
     end
   end

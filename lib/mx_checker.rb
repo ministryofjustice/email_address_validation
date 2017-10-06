@@ -1,6 +1,6 @@
 require 'resolv'
 
-class MxChecker
+class MxChecker # :nodoc:
   def initialize(resolver = ::Resolv::DNS.new)
     @resolver = resolver
   end
@@ -13,7 +13,7 @@ class MxChecker
     true
   end
 
-  class Dummy
+  class Dummy # :nodoc:
     def records?(_)
       true
     end
