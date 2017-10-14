@@ -60,7 +60,7 @@ RSpec.describe EmailAddressValidation::Checker do
   context 'with valid address' do
     before do
       EmailAddressValidation.configure do |config|
-        config.mx_checker = MxChecker.new
+        config.mx_checker = MxChecker::Dummy.new
       end
     end
 
