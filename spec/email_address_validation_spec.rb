@@ -70,7 +70,7 @@ RSpec.describe EmailAddressValidation::Checker do
 
     it 'checks MX record only once' do
       expect(EmailAddressValidation.configuration.mx_checker)
-        .to receive(:records?).once.and_return(true)
+      .to receive(:records?).once.and_return(true)
 
       2.times do
         subject.valid?
@@ -79,7 +79,7 @@ RSpec.describe EmailAddressValidation::Checker do
 
     it 'instruments the request' do
       expect(ActiveSupport::Notifications)
-        .to receive(:instrument).with(:mx, category: :mx)
+      .to receive(:instrument).with(:mx, category: :mx)
 
       subject.valid?
     end
@@ -87,8 +87,8 @@ RSpec.describe EmailAddressValidation::Checker do
     context 'when MX check fails' do
       before do
         allow(EmailAddressValidation.configuration.mx_checker)
-          .to receive(:records?)
-          .and_return(false)
+        .to receive(:records?)
+        .and_return(false)
       end
 
       it_behaves_like 'an invalid address', 'no_mx_record'
