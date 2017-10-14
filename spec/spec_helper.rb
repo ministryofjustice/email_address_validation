@@ -1,3 +1,5 @@
+ENV['RACK_ENV'] = 'test'
+
 require 'bundler/setup'
 require 'email_address_validation'
 require 'mx_checker'
@@ -10,6 +12,8 @@ RSpec.configure do |config|
 
   # Disable RSpec exposing methods globally on `Module` and `main`
   config.disable_monkey_patching!
+
+  config.mx_checker = MxChecker::Dummy.new
 
   config.expect_with :rspec do |c|
     c.syntax = :expect
