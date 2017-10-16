@@ -1,8 +1,8 @@
+[![Build Status](https://travis-ci.org/ministryofjustice/email_address_validation.svg?branch=master)](https://travis-ci.org/ministryofjustice/email_address_validation)
+
 # EmailAddressValidation
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/email_address_validation`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+A ruby gem that checks the validity of a user's email address.  This gem checks that the provided email address is parseable, is correctly formatted and that the domain exists.  It can be used in both plain Ruby and Rails projects.
 
 ## Installation
 
@@ -22,7 +22,21 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Use the following in your configuration file for production:
+
+```ruby
+EmailAddressValidation.configure do |config|
+  config.mx_checker = MxChecker.new
+end
+```
+
+Use the following in your configuration file for testing and development:
+
+```ruby
+EmailAddressValidation.configure do |config|
+  config.mx_checker = MxChecker::Dummy.new
+end
+```
 
 ## Development
 
