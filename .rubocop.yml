@@ -1,0 +1,15 @@
+AllCops:
+  Exclude:
+    - '*.gemspec'
+
+  TargetRubyVersion: 2.4.1
+
+Metrics/LineLength:
+  Max: 90
+  Exclude:
+    - 'spec/**/*'
+
+# Don't worry about long methods in specs.
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
