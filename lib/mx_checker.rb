@@ -1,8 +1,10 @@
 # frozen_string_literal: true
 
 require 'resolv'
+require_relative 'email_address_validation/dummy_mx_checker'
 
 class MxChecker # :nodoc:
+  include Dummy
   def initialize(resolver = ::Resolv::DNS.new)
     @resolver = resolver
   end
@@ -13,11 +15,5 @@ class MxChecker # :nodoc:
     false
   rescue ::Resolv::ResolvTimeout
     true
-  end
-
-  class Dummy # :nodoc:
-    def records?(_)
-      true
-    end
   end
 end

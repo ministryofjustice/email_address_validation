@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require_relative 'email_address_validation/configuration'
+require_relative 'email_address_validation/testing'
 require_relative 'mx_checker'
 require 'mail'
 
