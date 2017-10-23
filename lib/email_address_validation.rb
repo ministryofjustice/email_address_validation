@@ -3,6 +3,7 @@
 require_relative 'email_address_validation/configuration'
 require_relative 'email_address_validation/testing'
 require_relative 'mx_checker'
+require 'active_support'
 require 'mail'
 
 module EmailAddressValidation # :nodoc:
