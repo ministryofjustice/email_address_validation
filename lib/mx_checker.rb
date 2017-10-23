@@ -4,7 +4,7 @@ require 'resolv'
 require_relative 'email_address_validation/dummy_mx_checker'
 
 class MxChecker # :nodoc:
-  include Dummy
+  include DummyMxChecker
   def initialize(resolver = ::Resolv::DNS.new)
     @resolver = resolver
   end

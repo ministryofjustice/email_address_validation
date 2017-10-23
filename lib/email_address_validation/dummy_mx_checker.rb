@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-module Dummy # :nodoc:
-  class Dummy
+module DummyMxChecker # :nodoc:
+  class Dummy # :nodoc:
     def records?(_)
       true
     end
