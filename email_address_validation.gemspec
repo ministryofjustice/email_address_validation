@@ -40,6 +40,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rubocop'
   spec.add_development_dependency 'simplecov'
   spec.add_development_dependency 'simplecov-rcov'
+  spec.add_runtime_dependency 'activesupport', '~> 5.X'
   spec.add_runtime_dependency 'mail', '~> 2.6.6'
-  spec.add_runtime_dependency 'activesupport', '~> 5.1.4'
 end
