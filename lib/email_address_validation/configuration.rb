@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module EmailAddressValidation # :nodoc:
   class Configuration # :nodoc:
     attr_accessor :mx_checker

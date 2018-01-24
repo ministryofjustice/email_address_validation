@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 RSpec.describe MxChecker do
@@ -13,9 +15,10 @@ RSpec.describe MxChecker do
   describe 'records?' do
     context 'when MX records are found' do
       before do
-        allow(resolver).
-          to receive(:getresource).with(domain, anything).
-          and_return(true)
+        allow(resolver)
+          .to receive(:getresource)
+          .with(domain, anything)
+          .and_return(true)
       end
 
       it 'is true' do
@@ -25,9 +28,9 @@ RSpec.describe MxChecker do
 
     context 'when the MX query times out' do
       before do
-        allow(resolver).
-          to receive(:getresource).
-          and_raise(Resolv::ResolvTimeout)
+        allow(resolver)
+          .to receive(:getresource)
+          .and_raise(Resolv::ResolvTimeout)
       end
 
       it 'is true' do
@@ -37,9 +40,9 @@ RSpec.describe MxChecker do
 
     context 'when the MX query fails' do
       before do
-        allow(resolver).
-          to receive(:getresource).
-          and_raise(Resolv::ResolvError)
+        allow(resolver)
+          .to receive(:getresource)
+          .and_raise(Resolv::ResolvError)
       end
 
       it 'is false' do

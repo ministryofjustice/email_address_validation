@@ -1,8 +1,16 @@
+# frozen_string_literal: true
+
+require 'simplecov-rcov'
+require 'simplecov'
+
+SimpleCov.formatter = SimpleCov::Formatter::RcovFormatter
+SimpleCov.minimum_coverage 98.77
+
+SimpleCov.start
+
 require 'bundler/setup'
-require 'email_address_validation'
-require 'mx_checker'
-require 'rails'
 require 'active_support/all'
+require 'email_address_validation'
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

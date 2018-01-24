@@ -6,7 +6,7 @@ Gem::Specification.new do |spec|
   spec.name          = 'email_address_validation'
   spec.version       = EmailAddressValidation::VERSION
   spec.authors       = ['Kath Pobee-Norris']
-  spec.email         = ['kpobeenorris@gmail.com']
+  spec.email         = ['kath.Pobee-Norris@digital.justice.gov.uk']
 
   spec.summary       = 'Email address validator'
   spec.description   = "Gem to validate various aspects of user's email address.
@@ -37,7 +37,9 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rake', '~> 10.0'
   spec.add_development_dependency 'rspec', '~> 3.0'
   spec.add_development_dependency 'rspec-rails', '~> 3.0'
-  spec.add_runtime_dependency 'rails', '~> 5.0'
+  spec.add_development_dependency 'rubocop'
+  spec.add_development_dependency 'simplecov'
+  spec.add_development_dependency 'simplecov-rcov'
   spec.add_runtime_dependency 'mail', '~> 2.6.6'
   spec.add_runtime_dependency 'activesupport', '~> 5.1.4'
 end

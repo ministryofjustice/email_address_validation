@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'email_address_validation/configuration'
 require_relative 'mx_checker'
 require 'mail'
@@ -9,10 +11,6 @@ module EmailAddressValidation # :nodoc:
 
   def self.configuration
     @configuration ||= Configuration.new
-  end
-
-  def self.reset
-    @configuration = Configuration.new
   end
 
   def self.configure
