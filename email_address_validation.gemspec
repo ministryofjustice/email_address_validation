@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.description   = "Gem to validate various aspects of user's email address.
   It will enable checks to take place prior to submission to ensure the user has
   entered a valid email address"
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.homepage      = "https://github.com/ministryofjustice/email_address_validation"
   spec.license       = 'MIT'
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the
