@@ -33,13 +33,13 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
-  spec.add_development_dependency 'bundler', '~> 0'
-  spec.add_development_dependency 'rake', '~> 0'
-  spec.add_development_dependency 'rspec', '~> 0'
-  spec.add_development_dependency 'rspec-rails', '~> 0'
-  spec.add_development_dependency 'rubocop', '~> 0'
-  spec.add_development_dependency 'simplecov', '~> 0'
-  spec.add_development_dependency 'simplecov-rcov', '~> 0'
-  spec.add_runtime_dependency 'activesupport', '~> 0'
-  spec.add_runtime_dependency 'mail', '~> 0'
+  spec.add_development_dependency 'bundler'
+  spec.add_development_dependency 'rake'
+  spec.add_development_dependency 'rspec'
+  spec.add_development_dependency 'rspec-rails'
+  spec.add_development_dependency 'rubocop'
+  spec.add_development_dependency 'simplecov'
+  spec.add_development_dependency 'simplecov-rcov'
+  spec.add_runtime_dependency 'activesupport'
+  spec.add_runtime_dependency 'mail'
 end
